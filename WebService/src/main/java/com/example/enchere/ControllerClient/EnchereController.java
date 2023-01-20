@@ -31,6 +31,11 @@ public class EnchereController {
 	{
 		return new Enchere().selectall();
 	}
+	@GetMapping("/historique/{idhistorique}")
+	public ArrayList<Enchere> selectByIDDate(@PathVariable("idhistorique") int id) throws Exception
+	{
+		return new Enchere().selectByIdDate(id);
+	}
 	
 	@GetMapping("/recherche/{valeur}")
 	public ArrayList<Enchere> recherche(@PathVariable("valeur") String valeur) throws Exception

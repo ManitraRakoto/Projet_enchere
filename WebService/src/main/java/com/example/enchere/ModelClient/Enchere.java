@@ -132,6 +132,10 @@ public class Enchere {
 	{
 		return selection(" enchere where idenchere='"+id+"'");
 	}
+	public ArrayList<Enchere> selectByIdDate(int id) throws Exception
+	{
+		return selection(" enchere where idutilisateur='"+id+"' order by dateheureenchere desc ");
+	}
 	public ArrayList<Enchere> select_valide() throws Exception
 	{
 		return selection(" enchere where datefinenchere>now()");
@@ -144,6 +148,7 @@ public class Enchere {
 	{
 		return selection(" v_enchere_categorie where description like '%"+recherche+"%' or categorie like '%"+recherche+"%'");
 	}
+
 	
 	public boolean insertion(Enchere enchere) throws Exception
 	{
