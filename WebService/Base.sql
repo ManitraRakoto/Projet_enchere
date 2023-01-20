@@ -17,9 +17,9 @@ drop table utilisateur;
 -- 1
 Create table utilisateur(
     idUtilisateur serial primary key not null,
-    nom varchar(20) not null,
-    prenom varchar(20) not null,
-    email varchar(20) not null,
+    nom text not null,
+    prenom text not null,
+    email text not null,
     mdp text not null,
     solde_compte float default 0
 );
@@ -74,7 +74,9 @@ Create table Enchere(
     idCategorie int not null references categorie(idCategorie),
     dateheureenchere timestamp default current_timestamp,
     prixdevente float not null,
-    prixminimum float not null
+    prixminimum float not null,
+    etat int default 0,
+    datefinenchere timestamp default current_timestamp
 );
 INSERT INTO Enchere (idEnchere,idUtilisateur,dureeEnchere,idCategorie,prixdevente,prixminimum) values
 (2,2,2.0,1,2000,1500),
